@@ -178,6 +178,10 @@ def _feature_smooth_scroll():
 	return feature_toggle(_SMOOTH_SCROLL[0], _F.HI_RES_SCROLLING,
 					label=_SMOOTH_SCROLL[1], description=_SMOOTH_SCROLL[2],
 					device_kind=_DK.mouse)
+def _feature_new_smooth_scroll():
+	return feature_toggle(_SMOOTH_SCROLL[0], _F.LOWRES_WHEEL,
+					label=_SMOOTH_SCROLL[1], description=_SMOOTH_SCROLL[2],
+					device_kind=_DK.mouse)
 
 def _feature_smart_shift():
 	_MIN_SMART_SHIFT_VALUE = 0
@@ -259,6 +263,7 @@ _SETTINGS_LIST = namedtuple('_SETTINGS_LIST', [
 					'fn_swap',
 					'new_fn_swap',
 					'smooth_scroll',
+					'new_smooth_scroll',
 					'side_scroll',
 					'dpi',
 					'hand_detection',
@@ -271,6 +276,7 @@ RegisterSettings = _SETTINGS_LIST(
 				fn_swap=_register_fn_swap,
 				new_fn_swap=None,
 				smooth_scroll=_register_smooth_scroll,
+				new_smooth_scroll=None,
 				side_scroll=_register_side_scroll,
 				dpi=_register_dpi,
 				hand_detection=_register_hand_detection,
@@ -281,6 +287,7 @@ FeatureSettings =  _SETTINGS_LIST(
 				fn_swap=_feature_fn_swap,
 				new_fn_swap=_feature_new_fn_swap,
 				smooth_scroll=_feature_smooth_scroll,
+				new_smooth_scroll=_feature_new_smooth_scroll,
 				side_scroll=None,
 				dpi=_feature_adjustable_dpi,
 				hand_detection=None,
