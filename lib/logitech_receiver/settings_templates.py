@@ -179,6 +179,11 @@ def _feature_smooth_scroll():
 					label=_SMOOTH_SCROLL[1], description=_SMOOTH_SCROLL[2],
 					device_kind=_DK.mouse)
 
+def _feature_hires_smooth_scroll():
+	return feature_toggle(_SMOOTH_SCROLL[0], _F.HIRES_WHEEL,
+					label=_SMOOTH_SCROLL[1], description=_SMOOTH_SCROLL[2],
+					device_kind=_DK.mouse)
+
 def _feature_smart_shift():
 	_MIN_SMART_SHIFT_VALUE = 0
 	_MAX_SMART_SHIFT_VALUE = 50
@@ -259,6 +264,7 @@ _SETTINGS_LIST = namedtuple('_SETTINGS_LIST', [
 					'fn_swap',
 					'new_fn_swap',
 					'smooth_scroll',
+					'hires_smooth_scroll',
 					'side_scroll',
 					'dpi',
 					'hand_detection',
@@ -271,6 +277,7 @@ RegisterSettings = _SETTINGS_LIST(
 				fn_swap=_register_fn_swap,
 				new_fn_swap=None,
 				smooth_scroll=_register_smooth_scroll,
+				hires_smooth_scroll=None,
 				side_scroll=_register_side_scroll,
 				dpi=_register_dpi,
 				hand_detection=_register_hand_detection,
@@ -281,6 +288,7 @@ FeatureSettings =  _SETTINGS_LIST(
 				fn_swap=_feature_fn_swap,
 				new_fn_swap=_feature_new_fn_swap,
 				smooth_scroll=_feature_smooth_scroll,
+				hires_smooth_scroll=_feature_hires_smooth_scroll,
 				side_scroll=None,
 				dpi=_feature_adjustable_dpi,
 				hand_detection=None,
@@ -320,6 +328,7 @@ def check_feature_settings(device, already_known):
 		already_known.append(feature(device))
 
 	check_feature(_SMOOTH_SCROLL[0], _F.HI_RES_SCROLLING)
+	check_feature(_SMOOTH_SCROOL[0], _F.HIRES_WHEEL)
 	check_feature(_FN_SWAP[0],       _F.FN_INVERSION)
 	check_feature(_FN_SWAP[0],       _F.NEW_FN_INVERSION, 'new_fn_swap')
 	check_feature(_DPI[0],           _F.ADJUSTABLE_DPI)
