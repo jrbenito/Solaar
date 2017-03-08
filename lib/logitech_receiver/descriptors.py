@@ -148,6 +148,7 @@ _D('Wireless Keyboard MK270', protocol=2.0, wpid='4023',
 							_FS.fn_swap()
 						],
 				)
+_D('Wireless Keyboard K270(unifying)', protocol=2.0, wpid='4003')
 _D('Wireless Keyboard K270', protocol=1.0,
 				registers=(_R.battery_status, ),
 				)
