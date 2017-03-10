@@ -218,6 +218,7 @@ _D('Illuminated Living-Room Keyboard K830', protocol=2.0, wpid='4032',
 
 # Mice
 
+_D('Wireless Mouse M150', protocol=2.0, wpid='4022')
 _D('Wireless Mouse M175', protocol=2.0, wpid='4008')
 _D('Wireless Mouse M185', protocol=2.0, wpid='4038')
 _D('Wireless Mouse M185 new', codename='M185n', protocol=4.5, wpid='4054',
